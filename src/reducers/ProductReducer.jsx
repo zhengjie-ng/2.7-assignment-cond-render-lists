@@ -75,7 +75,6 @@ export function productReducer(state, action) {
         state.prevEditItem.itemEditIcon = "✏️";
       }
       const newEditItem = state.list.find((item) => item.id === action.id);
-      // console.log(newEditItem);
       newEditItem.itemEditIcon = "⚙️";
       return {
         ...state,

@@ -10,7 +10,7 @@ function EditForm() {
   const prodCtx = useContext(ProductContext);
   return (
     <div>
-      <form>
+      <form onSubmit={prodCtx.handlerSubmit}>
         <table className={`${styles.table} ${!modeCtx.isLight && styles.dark}`}>
           <thead>
             <tr>
