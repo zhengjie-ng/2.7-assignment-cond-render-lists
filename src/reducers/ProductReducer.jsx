@@ -68,7 +68,17 @@ export function productReducer(state, action) {
         (accumulator, currentValue) => accumulator + currentValue.total,
         0
       );
-      return { ...state, list: newList, sumTotal: sum };
+      const originalSum = newList.reduce(
+        (acc, product) => acc + product.originalTotal,
+        0
+      );
+
+      return {
+        ...state,
+        list: newList,
+        sumTotal: sum,
+        originalSumTotal: originalSum,
+      };
     }
     case "EDIT_PRODUCT": {
       if (state.prevEditItem) {
