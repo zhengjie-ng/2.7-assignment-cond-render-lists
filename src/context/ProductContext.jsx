@@ -30,7 +30,7 @@ export function ProductProvider({ children }) {
     if (state.isEditing === false) {
       dispatch({ type: "DELETE_PRODUCT", id: id });
     } else {
-      alert("No Deleting Allowed in Editing Mode");
+      alert("No Deleting is Allowed in Editing Mode");
     }
   };
   const handlerEditProduct = (id) => {
