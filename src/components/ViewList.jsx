@@ -34,7 +34,13 @@ function ViewList() {
               <td>{item.discount}</td>
               <td>{item.total.toFixed(2)}</td>
               {/* Add Delete column data cell here */}
-              <td onClick={() => prodCtx.handlerEditProduct(item.id)}>
+              <td
+                onClick={
+                  item.itemEditIcon === "✏️"
+                    ? () => prodCtx.handlerEditProduct(item.id)
+                    : () => prodCtx.handlerItemCancel()
+                }
+              >
                 {item.itemEditIcon}
               </td>
               <td onClick={() => prodCtx.handlerDeleteProduct(item.id)}>❌</td>

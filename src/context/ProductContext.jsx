@@ -62,6 +62,9 @@ export function ProductProvider({ children }) {
     dispatch({ type: "CANCEL_FORM" });
   };
 
+  const handlerItemCancel = () => {
+    dispatch({ type: "CANCEL_FORM" });
+  };
   const context = {
     count: state.count,
     discount: state.discount,
@@ -90,6 +93,7 @@ export function ProductProvider({ children }) {
     handlerChangeEditDiscount,
     handlerSubmit,
     handlerCancel,
+    handlerItemCancel,
   };
 
   return (
